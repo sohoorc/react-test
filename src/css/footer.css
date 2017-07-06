@@ -1,0 +1,12 @@
+.miniFooter{
+    background-color: #333;
+    color:#fff;
+    padding-left: 20px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-align: center;
+}
+
+.miniFooter h1{
+    font-size: 15px;
+}

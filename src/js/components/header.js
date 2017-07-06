@@ -18,7 +18,7 @@ export default class ComponentHeader extends React.Component {
         const styleComponentHeader = {
             header: {
                 backgroundColor: '#333333',
-                'color':'#ffffff',
+                'color': '#ffffff',
                 textAlign:'center'
             }
         };

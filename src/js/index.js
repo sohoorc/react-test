@@ -1,10 +1,13 @@
 const React = require('react');
 const ReactDOM = require('react-dom');
 import ComponentHeader from './components/header';
-import IndexBody from './components/indexbody';
 import ComponentFooter from './components/footer';
+import IndexBody from './components/indexbody';
+import 'antd/dist/antd.css';// ant design样式库
 
-class Index extends React.Component {
+
+
+export default class Index extends React.Component {
     componentWillMount(){
         // 页面将要加载钩子
         
@@ -14,8 +17,10 @@ class Index extends React.Component {
         return (
             <div>
                 <ComponentHeader />
-                <IndexBody userid = {12345677}/>
+                <div>{this.props.children}</div>
+                <IndexBody userid = {123456}/>
                 <ComponentFooter/>
+                
             </div>
         )
     }
@@ -26,7 +31,3 @@ class Index extends React.Component {
     }
 }
 
-ReactDOM.render(
-    <Index />,
-    document.getElementById('root')
-);   

@@ -1,6 +1,6 @@
 import React from 'react';
-
-export default class ComponentHeader extends React.Component {
+import ReactDOM from 'react-dom';
+export default class ComponentHeader extends React.Component{
     constructor(){
         super();
         this.state ={
@@ -23,10 +23,21 @@ export default class ComponentHeader extends React.Component {
             }
         };
 
+        const styleComponentHeader = {
+            header:{
+                backgroundColor:'#333',
+                color:'#fff',
+                paddingTop:'15px',
+                textAlign:'center' 
+            }
+        }
+
+        
         return (
-         <header style = {styleComponentHeader.header} onClick = {this.switchHeader.bind(this)}>
-             <h1>头部1</h1>
-         </header>
+            <header className="smallFontSize" ref = 'headerStyle' onClick={this.switchHeader.bind(this)} style = {styleComponentHeader.header}>
+                <h1>头部</h1>
+            </header>
         )
     }
 }
+

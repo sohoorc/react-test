@@ -1,10 +1,11 @@
 import React from 'react';
 import { Row, Col } from 'antd';
 // 导航
-import { Menu, Icon, Tabs, message, Form, Input, Button, CheckBox } from 'antd';
+import { Menu, Icon, Tabs, message, Form, Input, Button, CheckBox ,Modal } from 'antd';
 
 const FormItem = Form.item;
 const SubMenu = Menu.SubMenu;
+const TabPane = Tabs.TabPane;
 const MenuItemGroup = Menu.ItemGroup;
 
 class PCHeader extends React.Component {
@@ -35,7 +36,7 @@ class PCHeader extends React.Component {
         </Menu.Item>
         :
         <Menu.Item key="register" class="register">
-            <Icon type="appstore">注册/登录</Icon>
+            <Icon type="appstore" />注册/登录
         </Menu.Item>
         ;
 
@@ -77,6 +78,26 @@ class PCHeader extends React.Component {
                             </Menu.Item>
                             {userShow}
                         </Menu>
+
+                       <Modal title="用户中心" wrapClassName="vertical-center-modal" visible={this.state.modalVisible} onCancel= {()=>this.setModalVisible(false)} onOk={() => this.setModalVisible(false)} okText = "关闭">
+							<Tabs type="card">
+								<TabPane tab="注册" key="2">
+									<Form horizontal onSubmit={this.handleSubmit.bind(this)}>
+										<FormItem label="账户">
+											<Input placeholder="请输入您的账号" {...getFieldProps('r_userName')}/>
+										</FormItem>
+										<FormItem label="密码">
+											<Input type="password" placeholder="请输入您的密码" {...getFieldProps('r_password')}/>
+										</FormItem>
+										<FormItem label="确认密码">
+											<Input type="password" placeholder="请再次输入您的密码" {...getFieldProps('r_confirmPassword')}/>
+										</FormItem>
+										<Button type="primary" htmlType="submit" >注册</Button>
+									</Form>
+								</TabPane>
+							</Tabs>
+						</Modal>
+
                     </Col>
                     <Col span={2}></Col>
                 </Row>

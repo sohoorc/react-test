@@ -1,6 +1,6 @@
 # react-news
 
-react练习demo,新闻站点。
+react练习项目,新闻站点。
 
 
 
